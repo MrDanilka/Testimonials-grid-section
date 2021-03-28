@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root{
+    --background: hsl(210, 46%, 95%);
+    --lightGray: hsl(0, 0%, 81%);
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue:hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 95vh;
+    font-size: 13px;
+    background-color: var(--background);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 600;
+}
+
+.grid-container{
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(2, 50%);
+    margin-left: 10vw;
+    margin-bottom: 25px;
+}
+
+.message{
+    border-radius: 7px;
+    padding: 5px 25px 0px 25px;
+}
+
+.message:not(:nth-child(5), :nth-child(3)){
+    color: white;
+}
+
+.message:nth-child(1){
+    order: 1;
+    grid-column: 1 / span 2;
+    background-color: var(--moderateViolet);
+    background-image: url('../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-position: top 0 right 15%;
+}
+
+.message:nth-child(2){
+    order: 2;
+    background-color: var(--veryDarkGrayishBlue);
+}
+
+.message:nth-child(5){
+    order: 3;
+    grid-column: 4 / span 1;
+    grid-row: 1 / span 2;
+    background-color: var(--white);
+}
+
+.message:nth-child(3){
+    order: 4;
+    background-color: var(--white);
+}
+
+.message:nth-child(4){
+    order: 5;
+    grid-column: 2 / span 2;
+    grid-row: 2 / span 1;
+    background-color: var(--veryDarkBlackishBlue);
+}
+
+.figurePicture{
+    float: left;
+    margin: 10px 10px 10px 0px;
+    height: 40px;
+}
+
+.profilePicture{
+    width: 30px;
+    height: 30px;
+    border: solid 2px white;
+    border-radius: 50%;
+}
+
+.name, .status{
+    font-size: 11px;
+}
+
+.status{
+    opacity: 0.5;
+}
+
+.main_text{
+    font-size: 15px;
+}
+
+.quote_text{
+    opacity: 0.7;
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+@media only screen and (min-width: 760px) and (max-width: 1100px) {
+    .grid-container{
+        grid-template-columns: repeat(4, 23%);
+        margin-left: 0;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .grid-container{
+        display: flex;
+        flex-direction: column;
+        margin-left: 0;
+    }
+    .message:nth-child(5){
+        order: 1000;
+    }
+}
+
+.attribution{
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a{
+    color: hsl(228, 45%, 44%);
+}
